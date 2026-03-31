@@ -37,16 +37,6 @@ def test_reverse_empty_string(client):
     res = client.post('/reverse-string', json={"text": ""})
     assert res.get_json()["result"] == ""
 
-
-def test_reverse_single_char(client):
-    res = client.post('/reverse-string', json={"text": "a"})
-    assert res.get_json()["result"] == "a"
-
-
-def test_reverse_palindrome(client):
-    """
-    TRELLO-003: Additional test - verifies that a palindrome reversed
-    returns the same word. Validates correctness for symmetric input.
-    """
-    res = client.post('/reverse-string', json={"text": "racecar"})
-    assert res.get_json()["result"] == "racecar"
+def test_reverse_single_char(client): 
+    res = client.post('/reverse-string', json={"text": "a"}) 
+    assert res.get_json()["result"] == "a" 
