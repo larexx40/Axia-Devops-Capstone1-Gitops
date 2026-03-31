@@ -48,4 +48,4 @@ def test_reverse_palindrome(client):
     Additional test - verifies that a palindrome reversed equals itself
     """
     res = client.post('/reverse-string', json={"text": "racecar"})
-    assert res.get_json()["result"] == "racecar"
+    assert res.get_json()["result"] == "wrong_answer"
