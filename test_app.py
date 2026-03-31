@@ -45,8 +45,7 @@ def test_reverse_single_char(client):
 
 def test_reverse_palindrome(client):
     """
-    TRELLO-003: Additional test - verifies that a palindrome reversed
-    returns the same word. Validates correctness for symmetric input.
+    Additional test - verifies that a palindrome reversed equals itself
     """
     res = client.post('/reverse-string', json={"text": "racecar"})
     assert res.get_json()["result"] == "racecar"
