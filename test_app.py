@@ -40,3 +40,10 @@ def test_reverse_empty_string(client):
 def test_reverse_single_char(client): 
     res = client.post('/reverse-string', json={"text": "a"}) 
     assert res.get_json()["result"] == "a" 
+
+def test_reverse_palindrome(client):
+    """
+    Additional test - verifies that a palindrome reversed
+    """
+    res = client.post('/reverse-string', json={"text": "racecar"})
+    assert res.get_json()["result"] == "racecar"
